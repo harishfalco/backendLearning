@@ -2,7 +2,7 @@ const express = require("express");
 const format = require("date-format")
 const app = express()
 
-const PORT = 4000 || process.env.PORT
+const PORT = process.env.PORT || 4000 
 
 app.get("/api/v1/:token",(req,res)=>{
     console.log(req.params.token);
