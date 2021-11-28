@@ -4,10 +4,7 @@ const app = express()
 
 const PORT = process.env.PORT || 4000 
 
-app.get("/api/v1/:token",(req,res)=>{
-    console.log(req.params.token);
-    res.status(200).json({params:req.params.token})
-})
+
 
 app.get("/api/v1/instagram",(req,res)=>{
     const instaSocial = {
@@ -40,6 +37,11 @@ app.get("/api/v1/linkedin",(req,res)=>{
 
     }
     res.json({linkedSocial});
+})
+
+app.get("/api/v1/:token",(req,res)=>{
+    console.log(req.params.token);
+    res.status(200).json({params:req.params.token})
 })
 
 app.listen(PORT,()=>{
