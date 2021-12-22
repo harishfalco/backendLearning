@@ -4,7 +4,16 @@ const app = express()
 
 const PORT = process.env.PORT || 4000 
 
+//swagger docs related
+const swaggerUi = require('swagger-ui-express');
+const YAML = require("yamljs")
+const swaggerDocument = YAML.load('./swagger.yaml');
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+app.get("/",(req,res)=>{
+    res.send("<h1>Helloe from auth system</h1>")
+})
 
 app.get("/api/v1/instagram",(req,res)=>{
     const instaSocial = {
