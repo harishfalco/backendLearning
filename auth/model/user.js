@@ -21,4 +21,7 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('user',userSchema) //even if u use 'U' for user mongodb stores in small letter , so better used small letters
+module.exports = mongoose.model('user',userSchema) 
+
+ // !! even if u use 'U' for user mongodb stores in small letter , so better used small letters
+// !! and append s to Eg: 'users"
